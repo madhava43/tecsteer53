@@ -1,0 +1,87 @@
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .section {
+    margin-bottom: 40px;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .subHeading {
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .paragraph {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .teamCard {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .teamImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .teamName {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .teamPosition {
+    font-size: 1rem;
+    color: #0070f3;
+    margin-bottom: 10px;
+  }
+  
+  .teamBio {
+    font-size: 0.875rem;
+    color: #666;
+  }
+  
+  .timeline {
+    border-left: 4px solid #0070f3;
+    padding-left: 20px;
+  }
+  
+  .timelineItem {
+    margin-bottom: 20px;
+  }
+  
+  .timelineYear {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #0070f3;
+  }
+  
+  .timelineEvent {
+    font-size: 1rem;
+    color: #666;
+  }
+  

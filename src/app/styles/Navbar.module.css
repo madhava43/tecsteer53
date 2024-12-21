@@ -1,0 +1,164 @@
+/* Navbar Styles with Gradient Animation */
+.navbar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background: linear-gradient(270deg, #94e6f5, #b8b6f5, #f4b9ed, #f6e6b3);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    z-index: 1000;
+    font-size: 1rem;
+    color: #fff;
+    transition: background 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add depth on hover */
+  }
+  
+  /* Logo Styles */
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Nav Links */
+  .navLinks {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .navLinks li {
+    position: relative;
+  }
+  
+  .navLinks a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navLinks a:hover {
+    color: #f890ec;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
+  
+  .dropdownMenu li {
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+  }
+  
+  .dropdownMenu li:hover {
+    background-color: #f3f3f3;
+  }
+  
+  .dropdown:hover .dropdownMenu {
+    display: flex;
+  }
+  
+  .dropdownToggle {
+    cursor: pointer;
+  }
+  
+  .dropdownMenu a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .dropdownMenu a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Hamburger Menu */
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .hamburger:focus {
+    outline: none;
+  }
+  
+  /* Keyframes for Gradient Animation */
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block; /* Show hamburger button on smaller screens */
+    }
+ 
+  
+    .navLinks {
+      display: none;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 20px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    .navLinks.active {
+      display: flex;
+    }
+  
+    .dropdownMenu {
+      position: static;
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    .navbar {
+      justify-content: space-between;
+    }
+  
+    .logo {
+      font-size: 1.25rem;
+    }
+  }
+  
