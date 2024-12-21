@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { IconCloud } from "./components/IconCloud";
+import { DotPattern } from "../components/ui/dot-pattern";
 import styles from "./styles/Home.module.css";
 
 const slugs = [
@@ -81,6 +84,16 @@ export default function Home() {
 
   return (
     <main className={styles.container}>
+      {/* DotPattern Background */}
+      <DotPattern
+        width={10}
+        height={10}
+        cx={10}
+        cy={10}
+        cr={1}
+        className="pointer-events-none absolute inset-0 h-full w-full"
+        style={{ fill: "#ffffff" }}
+      />
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.iconCloudContainer}>
@@ -98,7 +111,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Us Section */}
+      {/* About Section */}
       <section className={styles.about}>
         <h2 className={styles.subHeading}>About Us</h2>
         <p className={styles.paragraph}>
@@ -116,7 +129,7 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section with Flipping Cards */}
       <section className={styles.services}>
         <h2 className={styles.subHeading}>Our Services</h2>
         <p className={styles.description}>
@@ -127,13 +140,15 @@ export default function Home() {
             <div key={index} className={styles.cardWrapper}>
               <div className={styles.card}>
                 <div className={styles.cardInner}>
+                  {/* Front Side */}
                   <div className={styles.cardFront}>
                     <img src={service.icon} alt={service.title} className={styles.icon} />
                     <h3 className={styles.cardTitle}>{service.title}</h3>
                   </div>
+                  {/* Back Side */}
                   <div className={styles.cardBack}>
-                    <p>{service.description}</p>
-                    <button className={styles.cardButton}>Know More</button>
+                    <p className={styles.cardDescription}>{service.description}</p>
+                    <button className={styles.cardButton}>Learn More</button>
                   </div>
                 </div>
               </div>

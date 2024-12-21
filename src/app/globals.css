@@ -91,3 +91,53 @@ body {
 .animate-grid {
   animation: fadeInOut 0.5s infinite ease-in-out;
 }
+button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.5rem; /* Rounded corners */
+  padding: 0.5rem 1rem; /* Padding */
+  font-size: 1rem;
+  color: #fff; /* Text color */
+  background-color: #0096ff; /* Button background color */
+  transition: background-color 0.3s ease;
+  overflow: hidden; /* To prevent the pulse animation from spilling out */
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background-color: rgba(0, 150, 255, 0.5); /* Pulsating color */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  animation: pulse 1.5s infinite; /* Pulsating animation */
+}
+
+button:hover {
+  background-color: #007acc; /* Darker background on hover */
+}
+
+button > * {
+  position: relative;
+  z-index: 1; /* Ensure text is above the animation */
+}
+
+/* Define the pulsating animation */
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
