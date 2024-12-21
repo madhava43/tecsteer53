@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { IconCloud } from "./components/IconCloud";
-import { NeonGradientCard } from "../components/ui/neon-gradient-card";
 import styles from "./styles/Home.module.css";
 
 const slugs = [
@@ -125,18 +124,20 @@ export default function Home() {
         </p>
         <div className={styles.grid}>
           {services.map((service, index) => (
-            <NeonGradientCard
-              key={index}
-              className={styles.card}
-              neonColors={{
-                firstColor: "#ff00aa",
-                secondColor: "#00FFF1",
-              }}
-            >
-              <img src={service.icon} alt={service.title} className={styles.icon} />
-              <h3 className={styles.cardTitle}>{service.title}</h3>
-              <p className={styles.cardDescription}>{service.description}</p>
-            </NeonGradientCard>
+            <div key={index} className={styles.cardWrapper}>
+              <div className={styles.card}>
+                <div className={styles.cardInner}>
+                  <div className={styles.cardFront}>
+                    <img src={service.icon} alt={service.title} className={styles.icon} />
+                    <h3 className={styles.cardTitle}>{service.title}</h3>
+                  </div>
+                  <div className={styles.cardBack}>
+                    <p>{service.description}</p>
+                    <button className={styles.cardButton}>Know More</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
         <Link href="/services" className={styles.link}>
