@@ -3,15 +3,15 @@ import { useId } from "react";
 import { cn } from "@/lib/utils";
 
 interface DotPatternProps {
-  width?: any;
-  height?: any;
-  x?: any;
-  y?: any;
-  cx?: any;
-  cy?: any;
-  cr?: any;
-  className?: string;
-  [key: string]: any;
+  width?: number; // Width should be a number
+  height?: number; // Height should be a number
+  x?: number; // x-coordinate should be a number
+  y?: number; // y-coordinate should be a number
+  cx?: number; // Circle x-coordinate should be a number
+  cy?: number; // Circle y-coordinate should be a number
+  cr?: number; // Circle radius should be a number
+  className?: string; // ClassName should be a string
+  [key: string]: unknown; // Any additional props as unknown
 }
 export function DotPattern({
   width = 16,
