@@ -26,7 +26,7 @@ export default function About() {
           <TeamCard
             name="Jane Doe"
             position="CEO"
-            image="/images/jane.jpeg"
+            image="/images/Jane.jpeg"
             bio="Jane has over 20 years of experience in leadership and technology."
           />
           <TeamCard
