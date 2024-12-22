@@ -32,7 +32,9 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        <Link href="/">My Company</Link>
+        <Link href="/">
+          <img src="/logo.png" alt="Logo" className={styles.logoImage} />
+        </Link>
       </div>
 
       {/* Hamburger Button */}
@@ -52,22 +54,22 @@ const Navbar = () => {
               Home
             </Link>
           </li>
-          <li>
-            <Link href="/about" onClick={closeMenu}>
-              About Us
-            </Link>
-          </li>
           <li
             className={styles.dropdown}
             onMouseEnter={() => setDropdownOpen(true)} // Show dropdown on hover
-            onMouseLeave={() => setDropdownOpen(false)} // Hide dropdown when mouse leaves
+            onMouseLeave={() => setDropdownOpen(false)} // Hide dropdown on leave
           >
-            <span
-              className={styles.dropdownToggle}
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-            >
-              Services
-            </span>
+            <Link href="/services" onClick={closeMenu}>
+              <span
+                className={styles.dropdownToggle}
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent triggering dropdown toggle
+                  closeMenu(); // Close menu if mobile
+                }}
+              >
+                Services
+              </span>
+            </Link>
             {dropdownOpen && (
               <ul className={styles.dropdownMenu}>
                 {services.map((service, index) => (
@@ -81,8 +83,18 @@ const Navbar = () => {
             )}
           </li>
           <li>
-            <Link href="/contact" onClick={closeMenu}>
-              Contact Us
+            <Link href="/consulting" onClick={closeMenu}>
+              Consulting
+            </Link>
+          </li>
+          <li>
+            <Link href="/trainings" onClick={closeMenu}>
+              Trainings
+            </Link>
+          </li>
+          <li>
+            <Link href="/careers" onClick={closeMenu}>
+              Careers
             </Link>
           </li>
         </ul>

@@ -14,41 +14,51 @@ const Footer = () => {
 
   return (
     <footer className={`${styles.footer} relative`}>
-      {/* Animated Grid Pattern */}
+      {/* Animated Grid Background */}
       <AnimatedGridPattern
         className="absolute inset-0 pointer-events-none"
         width={40}
         height={40}
         maxOpacity={0.3}
         numSquares={100}
-        duration={6}
+        duration={5}
       />
 
       {/* Footer Content */}
-      <div className="relative container mx-auto text-center z-10">
-        {/* Quick Links */}
-        <div className={styles.links}>
-          <Link href="/" className={styles.link}>
-            Home
-          </Link>
-          <Link href="/about" className={styles.link}>
-            About Us
-          </Link>
-          <Link href="/services" className={styles.link}>
-            Services
-          </Link>
-          <Link href="/contact" className={styles.link}>
-            Contact Us
-          </Link>
+      <div className={styles.footerContainer}>
+        {/* Contact Us Section */}
+        <div className={styles.contact}>
+          <h3>Contact Us</h3>
+          <p>Email: contact@mycompany.com</p>
+          <p>Phone: +1 123 456 7890</p>
         </div>
 
-        {/* Social Media Icons */}
-        <div className={styles.socialIcons}>
+        {/* Quick Links Section */}
+        <div className={styles.quickLinks}>
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <Link href="/services">Services</Link>
+            </li>
+            <li>
+              <Link href="/consulting">Consulting</Link>
+            </li>
+            <li>
+              <Link href="/trainings">Trainings</Link>
+            </li>
+            <li>
+              <Link href="/careers">Careers</Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Social Links Section */}
+        <div className={styles.socialLinks}>
+          <h3>Social Links</h3>
           <a
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.icon}
           >
             <i className="fab fa-facebook-f"></i>
           </a>
@@ -56,7 +66,6 @@ const Footer = () => {
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.icon}
           >
             <i className="fab fa-twitter"></i>
           </a>
@@ -64,15 +73,14 @@ const Footer = () => {
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.icon}
           >
             <i className="fab fa-linkedin-in"></i>
           </a>
         </div>
-
-        {/* Copyright Section */}
-        <p className={styles.copy}>© {year} My Company. All Rights Reserved.</p>
       </div>
+
+      {/* Copyright Section */}
+      <p className={styles.copy}>© {year} My Company. All Rights Reserved.</p>
     </footer>
   );
 };
